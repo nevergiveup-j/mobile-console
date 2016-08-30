@@ -1,3 +1,32 @@
+import express from 'express';
+import flash from 'connect-flash';
+import sassMiddleware from 'node-sass-middleware';
+import config from './config/config';
+import routes from './routes/routes';
+
+const app = express();
+
+app.use(flash());
+
+app.use(sassMiddleware({
+  src: 'public/sass',
+  dest: 'public/css',
+  debug: true,
+  force: true,
+  outputStyle: 'expanded',
+  prefix:  '/static/css'
+}));
+
+app.use('/static', express.static('public'));
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
+app.use('/', routes);
+
+app.listen(config.port);
+
+console.info('Server http://127.0.0.1:' + config.port);
+
 // var express = require('express');
 // var sassMiddleware = require('node-sass-middleware');
 // var path = require('path');

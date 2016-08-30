@@ -1,12 +1,12 @@
 
 module.exports = {
 	port: process.env.PORT || 3002,
-    cookieSecret: 'webAPI',
+  cookieSecret: 'mobileConsole',
 	mongodb: {
-         host: 'localhost/',
-         db: 'webAPI',
-         port: '',
-         username: 'admin',
-         password: 'admin'
-    }
+    host: 'localhost/',
+    db: 'mobileConsole',
+    port: '',
+    username: 'admin',
+    password: 'admin'
+  }
 }

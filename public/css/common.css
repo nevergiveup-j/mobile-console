@@ -2,8 +2,7 @@
   *zoom: 1;
 }
 
-.fn-clearfix:before,
-.fn-clearfix:after {
+.fn-clearfix:before, .fn-clearfix:after {
   content: "";
   display: table;
 }
@@ -122,8 +121,7 @@ a {
   color: #08c;
 }
 
-a:active,
-a:hover {
+a:active, a:hover {
   outline: 0;
   /* 2 */
 }
@@ -308,7 +306,8 @@ select {
  *    Known issue: inner spacing remains in IE 6.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -639,8 +638,7 @@ a {
   color: #08c;
 }
 
-a:active,
-a:hover {
+a:active, a:hover {
   outline: 0;
   /* 2 */
 }
@@ -825,7 +823,8 @@ select {
  *    Known issue: inner spacing remains in IE 6.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
