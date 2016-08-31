@@ -122,13 +122,12 @@
     }
   }
 
-  var Consoles = {
-    init: function() {
-      console.log(1111);
+  var consoles = {
+    log: function(value) {
+      console.log(value);
     }
   }
 
-  Consoles.init();
-
+  win.consoles = consoles;
 }(window, document);
 
