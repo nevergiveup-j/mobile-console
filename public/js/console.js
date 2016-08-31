@@ -7,7 +7,9 @@
  */
 
 !function(win, doc){
-  var userAgent = navigator.userAgent.toLowerCase();
+  var docEl = doc.documentElement,
+    userAgent = navigator.userAgent.toLowerCase(),
+    domainUrl = /^https/i.test(location.href) ? 'https://127.0.0.1:3002' : 'http://127.0.0.1:3002';
 
   var Util = {
     /**
@@ -119,9 +121,68 @@
       iphone: /iphone/i.test( userAgent ),
       ipad: /ipad/i.test( userAgent ),
       android: /android/i.test( userAgent ) || /Linux/i.test( userAgent )
+    },
+    /**
+     * 根据 id 获取元素
+     * @name util.byId
+     * @param {string}   elem   目标元素
+     * @param {object}   doc      可选，上下文
+     */
+    byId: function(elem, _doc) {
+      return ((typeof elem =="string") ? (_doc || doc).getElementById(elem) : elem) || null;
+    },
+    /**
+     * 获取和设置元素特的值
+     * @name util.attr
+     * @param {object}   elem   目标元素
+     * @param {string}   attr       事件类型
+     * @param {string}   value      事件值
+     */
+    attr: function(elem, attr, value) {
+      if(arguments.length == 2) {
+        return elem.attributes[attr] ? elem.attributes[attr].nodeValue : undefined  
+      }
+      else if(arguments.length == 3) {
+        elem.setAttribute(attr, value)  
+      }
     }
   }
 
+  var Match = {
+    /**
+     * 获取ID
+     * @return {[type]} [description]
+     */
+    getId: function() {
+      var script = Util.byId('consolesscript'),
+        id = Util.attr('data-channel');
+
+      return id;
+    },
+    /**
+     * 发送
+     * @return {[type]} [description]
+     */
+    send: function(param) {
+      
+
+      // img.src = url;
+      // img.onload = function() {
+
+      // }
+    },
+    createImage: function() {
+      var url = domainUrl + '/static/images/log.gif?',
+        img = new Image(1, 1);
+
+      console.log(url);
+    }
+  }
+
+  /**
+   * console
+   * @type {Object}
+   */
   var consoles = {
     log: function(value) {
       console.log(value);
