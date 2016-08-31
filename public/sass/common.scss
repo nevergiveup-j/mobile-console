@@ -9,33 +9,53 @@ a, button, input, textarea{
 }
 // 浮动及闭合浮动
 .fn-fl{
-    @include float;
+  @include float;
 }
 .fn-fr{
-    @include float(right);
+  @include float(right);
 }
 *, *:before, *:after {
-     @include box-sizing(border-box);
+  @include box-sizing(border-box);
 }
 
 .fn-clear {
-    display:block;
-    float:none;
-    clear:both;
-    overflow:hidden;
-    width:auto;
-    height:0;
-    margin:0 auto;
-    padding:0;
-    font-size:0;
-    line-height:0;
+  display:block;
+  float:none;
+  clear:both;
+  overflow:hidden;
+  width:auto;
+  height:0;
+  margin:0 auto;
+  padding:0;
+  font-size:0;
+  line-height:0;
 }
 .fn-clearfix {
-    @extend %clearfix;
+  @extend %clearfix;
 }
 
 .fn-hide {
-    display: none;
+  display: none;
 }
 
+
+.from-id {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  margin: 0 0 0 -200px;
+  line-height: 30px;
+  color: #fff;
+  .label {
+    padding-right: 5px;
+  }
+  .input-id {
+    height: 30px;
+    line-height: 30px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #333;
+  }
+}
 

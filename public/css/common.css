@@ -43,7 +43,7 @@ body {
   /* 0 */
   color: #333;
   /* 0 */
-  background-color: #fff;
+  background-color: #000;
   /* 0 */
 }
 
@@ -560,7 +560,7 @@ body {
   /* 0 */
   color: #333;
   /* 0 */
-  background-color: #fff;
+  background-color: #000;
   /* 0 */
 }
 
@@ -1080,4 +1080,26 @@ a, button, input, textarea {
 
 .fn-hide {
   display: none;
+}
+
+.from-id {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  margin: 0 0 0 -200px;
+  line-height: 30px;
+  color: #fff;
+}
+
+.from-id .label {
+  padding-right: 5px;
+}
+
+.from-id .input-id {
+  height: 30px;
+  line-height: 30px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #333;
 }

@@ -8,20 +8,20 @@ const router = Router();
 router.get('/', function (req, res) {
 	res.render('index',
 		{
-			pageTitle : '主页',
+			pageTitle : '首页',
 			// success: req.flash('success').toString()
 		}
 	)
 });
 
-// router.get('/login', isLoggedIn, function (req, res) {
-//   res.render('login',
-//   	{
-// 		pageTitle : '登录',
-// 		error: req.flash('error').toString()
-// 	}
-//   )
-// });
+router.get('/log', function (req, res) {
+  res.render('log',
+  	{
+		pageTitle : 'Log',
+		// error: req.flash('error').toString()
+	}
+  )
+});
 
 // router.post('/login', function(req, res) {
 // 	var email = req.body.email.trim();
