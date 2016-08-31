@@ -41,7 +41,7 @@ body {
   /* 0 */
   line-height: 1.5;
   /* 0 */
-  color: #333;
+  color: #fff;
   /* 0 */
   background-color: #000;
   /* 0 */
@@ -118,7 +118,7 @@ a {
   /* 1 */
   /* 0 */
   text-decoration: none;
-  color: #08c;
+  color: #fff;
 }
 
 a:active, a:hover {
@@ -127,7 +127,7 @@ a:active, a:hover {
 }
 
 a:hover {
-  color: #006699;
+  color: #e6e6e6;
 }
 
 /* Text-level semantics
@@ -558,7 +558,7 @@ body {
   /* 0 */
   line-height: 1.5;
   /* 0 */
-  color: #333;
+  color: #fff;
   /* 0 */
   background-color: #000;
   /* 0 */
@@ -635,7 +635,7 @@ a {
   /* 1 */
   /* 0 */
   text-decoration: none;
-  color: #08c;
+  color: #fff;
 }
 
 a:active, a:hover {
@@ -644,7 +644,7 @@ a:active, a:hover {
 }
 
 a:hover {
-  color: #006699;
+  color: #e6e6e6;
 }
 
 /* Text-level semantics
