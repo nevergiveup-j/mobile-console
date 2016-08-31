@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title></title>
+    <style>
+        html,body,div,p,ul,li,span,b {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style-type: none;
+        }
+        body {
+            font: 14px/1.5 "Helvetica Neue", Helvetica, Tahoma, "Microsoft Yahei", sans-serif;
+        }
+        *, :before, :after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .chat-list {
+            padding-bottom: 42px;
+        }
+        .chat-list .list li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .chat-emit {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99;
+            width: 100%;
+            padding: 5px;
+            background: #999;
+        }
+        .chat-emit .emit-head,
+        .chat-emit .emit-inner {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: flex;
+        }
+        .chat-emit .emit-head {
+          padding-bottom: 5px;
+        }
+        .chat-emit .emit-head .username {
+          display: block;
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          flex: 1;
+        }
+        .chat-emit .chat-text {
+            display: block;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            height: 32px;
+            line-height: 32px;
+            padding: 0 10px;
+            margin-right: 5px;
+            font-size: 14px;
+            background: #fff;
+            border: 1px solid #888;
+        }
+        .chat-emit .button-confirm {
+            display: block;
+            width: 80px;
+            height: 32px;
+            line-height: 26px;
+            font-size: 16px;
+            background: #333;
+            border: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="chat-list">
+    <ul class="list" id="J_chatList"></ul>
+</div>
+<div class="chat-emit">
+  <div class="emit-head">
+    <div class="username">
+      名字: <span class="J_username"></span>
+    </div>
+    <div class="online-number">
+      在线: <span class="J_online">1</span>
+    </div>
+  </div>
+  <div class="emit-inner">
+    <input type="text" class="chat-text"/>
+    <input type="button" class="button-confirm" value="确认"/>
+  </div>
+</div>
+<script src="http://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+</body>
+</html>
