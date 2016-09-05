@@ -3,6 +3,7 @@ import flash from 'connect-flash';
 import sassMiddleware from 'node-sass-middleware';
 import config from './config/config';
 import routes from './routes/routes';
+import socket from './controllers/onsocket';
 
 const app = express();
 
@@ -25,7 +26,9 @@ app.use('/', routes);
 
 app.listen(config.port);
 
-console.info('Server http://127.0.0.1:' + config.port);
+new socket();
+
+// console.info('Server http://127.0.0.1:' + config.port);
 
 // var express = require('express');
 // var sassMiddleware = require('node-sass-middleware');
