@@ -1,6 +1,7 @@
 
 module.exports = {
 	port: process.env.PORT || 3002,
+  socketPort: 3003,
   cookieSecret: 'mobileConsole',
 	mongodb: {
     host: 'localhost/',

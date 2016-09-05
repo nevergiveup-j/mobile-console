@@ -155,25 +155,51 @@
      */
     getId: function() {
       var script = Util.byId('consolesscript'),
-        id = Util.attr('data-channel');
+        id = Util.attr(script, 'data-channel') || 0;
 
       return id;
     },
     /**
-     * 发送
+     * 窗口尺寸
      * @return {[type]} [description]
      */
-    send: function(param) {
-      
+    screenSize: function() {
+      var screen = window.screen;
 
-      // img.src = url;
-      // img.onload = function() {
-
-      // }
+      return screen.width + 'x' + screen.height;
     },
-    createImage: function() {
-      var url = domainUrl + '/static/images/log.gif?',
+    /**
+     * 获取参数
+     * @return {[type]} [description]
+     */
+    getParam: function(value) {
+      var id = Match.getId(),
+        screenSize = Match.screenSize();
+
+      return '?id=' + id + '&body=' + value + '&screen=' + screenSize;
+    },
+    /**
+     * log
+     * @return {[type]} [description]
+     */
+    log: function(value) {
+      var param = this.getParam(value);  
+
+      // console.log(userAgent); 
+
+      this.createImage(param);   
+    },
+    /**
+     * 创建图片
+     * @param  {[type]} param [description]
+     * @return {[type]}       [description]
+     */
+    createImage: function(param) {
+      var url = domainUrl + '/log.gif',
         img = new Image(1, 1);
+
+      img.src = url + param;
+      img.onload = function(){}
 
       console.log(url);
     }
@@ -185,7 +211,7 @@
    */
   var consoles = {
     log: function(value) {
-      console.log(value);
+      Match.log(value);
     }
   }
 
