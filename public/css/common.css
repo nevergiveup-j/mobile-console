@@ -1,13 +1,19 @@
-.fn-clearfix {
+.log-header .fn-right a {
+  display: inline-block;
+  *display: inline;
   *zoom: 1;
 }
 
-.fn-clearfix:before, .fn-clearfix:after {
+.fn-clearfix, .log-header {
+  *zoom: 1;
+}
+
+.fn-clearfix:before, .log-header:before, .fn-clearfix:after, .log-header:after {
   content: "";
   display: table;
 }
 
-.fn-clearfix:after {
+.fn-clearfix:after, .log-header:after {
   clear: both;
 }
 
@@ -43,7 +49,7 @@ body {
   /* 0 */
   color: #fff;
   /* 0 */
-  background-color: #000;
+  background-color: #333;
   /* 0 */
 }
 
@@ -560,7 +566,7 @@ body {
   /* 0 */
   color: #fff;
   /* 0 */
-  background-color: #000;
+  background-color: #333;
   /* 0 */
 }
 
@@ -1102,4 +1108,66 @@ a, button, input, textarea {
   background: none;
   border: none;
   border-bottom: 1px solid #333;
+}
+
+/* log */
+.wrap {
+  padding: 10px;
+}
+
+.log-header {
+  padding: 5px 0 10px;
+  text-align: center;
+}
+
+.log-header .fn-right a {
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  padding: 0 8px;
+  background: #666;
+  border-radius: 3px;
+}
+
+.log-list {
+  line-height: 1.6;
+  color: #999;
+}
+
+.log-list .mark-line {
+  position: relative;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #666;
+  font-size: 12px;
+}
+
+.log-list .mark-line .mark-date {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  padding: 0 5px;
+  background: #333;
+}
+
+.log-list .date {
+  margin-right: 3px;
+}
+
+.log-list .browser {
+  margin-right: 3px;
+}
+
+.log-list .level {
+  margin-right: 2px;
+  color: #00be00;
+}
+
+.log-list .args {
+  color: #00be00;
+}
+
+.log-list .args:after, .log-list .args:before {
+  content: "\'";
+  color: #999;
 }

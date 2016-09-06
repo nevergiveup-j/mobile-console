@@ -1,7 +1,6 @@
 import express from 'express';
 import bowser from '../models/bowser';
 
-
 export default class Log {
   constructor(req, res) {
     this.query(req);
@@ -15,12 +14,13 @@ export default class Log {
     let param = req.query,
       useragent = bowser(req.headers['user-agent']);
 
-    console.log(req);
-
     param = Object.assign(param, {
       useragent: req.headers['user-agent'],
+      version: useragent.version,
+      platform: useragent.platform,
       bowser: useragent.name
     });
 
+    console.log(param);
   }
 }

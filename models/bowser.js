@@ -300,17 +300,23 @@
     // set OS flags for platforms that have multiple browsers
     if (!result.msedge && (android || result.silk)) {
       result.android = t
+      result.platform = 'Android'
     } else if (iosdevice) {
       result[iosdevice] = t
       result.ios = t
+      result.platform = 'Ios'
     } else if (mac) {
       result.mac = t
+      result.platform = 'Mac'
     } else if (xbox) {
       result.xbox = t
+      result.platform = 'Xbox'
     } else if (windows) {
       result.windows = t
+      result.platform = 'Windows'
     } else if (linux) {
       result.linux = t
+      result.platform = 'Linux'
     }
 
     // OS version extraction
