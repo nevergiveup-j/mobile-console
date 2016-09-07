@@ -1088,7 +1088,7 @@ a, button, input, textarea {
   display: none;
 }
 
-.from-id {
+.form-id {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1098,16 +1098,16 @@ a, button, input, textarea {
   color: #fff;
 }
 
-.from-id .label {
+.form-id .label {
   padding-right: 5px;
 }
 
-.from-id .input-id {
+.form-id .input-id {
   height: 30px;
   line-height: 30px;
   background: none;
   border: none;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #666;
 }
 
 /* log */

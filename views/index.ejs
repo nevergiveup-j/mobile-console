@@ -1,14 +1,52 @@
 <% include ./components/header %>
 
 <div class="wrap">
-  <div class="from-id">
-    <ul class="from-item">
+  <div class="form-id" id="J_formId">
+    <ul class="form-item">
       <li>
         <label class="label">输入ID</label>
-        <input type="text" value="" class="input-id" />
+        <input type="text" value="" class="input-id J_inputId" />
       </li>
     </ul>
   </div>
 </div>
 
 <% include ./components/footer %>
+
+<script>
+  
+!function(win, doc){
+
+  var Index = {
+    init: function() {
+      var self = this;
+
+      this.$form = $('#J_formId');
+      this.$input = this.$form.find('.J_inputId');
+
+      this.bind();
+    },
+    bind: function() {
+      var self = this,
+        val = '';    
+
+      this.$input.on('keypress', function(e) {
+        val = $(this).val();
+
+        self.onenter(e, val);
+      })
+    },
+    onenter: function(e, val) {
+      if(e.which == 13) {
+        if(!val.length) {
+          alert('请输入ID');
+        }
+
+        location.href = '/' + val;
+      }
+    }
+  }
+
+  Index.init();
+}(window, document);
+</script>

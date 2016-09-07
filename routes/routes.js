@@ -1,6 +1,7 @@
 import express, {Router} from 'express';
 
-import logControllers from '../controllers/log'
+import imageControllers from '../controllers/image';
+import logControllers from '../controllers/log';
 
 const router = Router();
 
@@ -10,14 +11,16 @@ router.get('/', (req,res) => {
 	})
 });
 
-router.get('/log', (req,res) => {
+router.get('/:id', (req,res) => {
+  new logControllers(req, res);
+
   res.render('log', {
 		pageTitle: 'Log'
 	})
 });
 
 router.get('/log.gif', (req,res) => {
-  new logControllers(req, res);
+  new imageControllers(req, res);
 
   res.set('Content-Type', 'image/gif');
   res.send('');
