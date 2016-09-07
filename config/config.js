@@ -4,10 +4,7 @@ export default {
   socketPort: 3003,
   cookieSecret: 'mobileConsole',
 	mongodb: {
-    host: 'localhost/',
-    db: 'mobileConsole',
-    port: '',
-    username: 'admin',
-    password: 'admin'
+    host: '192.168.9.37:27018',
+    db: '/console'
   }
 }
