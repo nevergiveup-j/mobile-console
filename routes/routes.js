@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
 	})
 });
 
-router.get('/:id', (req,res) => {
+router.get('/log/:id', (req,res) => {
   new logControllers(req, res);
 
   res.render('log', {

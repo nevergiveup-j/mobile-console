@@ -17,23 +17,21 @@
 
       socket.on('connect', function() {
         socket.emit('join', {
-          id: 1,
-          username: 'username'
+          id: 1
         });
       });
 
-      let msg = {
-        id: '111',
-        body: '24',
-        bowser: 'Chrome',
-        date: '15:22:15',
-        screen: '1920x1080'
-      }
-
       socket.on('message', function(data) {
-        if(typeof data.body == 'undefined' ) return;
+        if(!data.length){
+          return;
+        }
 
-        template = _.template(self.listTpl)(data);
+        console.log(data);
+        // if(typeof data.body == 'undefined' ) return;
+
+        template = _.template(self.listTpl)({
+          datas: data
+        });
         self.$wrap.prepend(template);        
       })
     }

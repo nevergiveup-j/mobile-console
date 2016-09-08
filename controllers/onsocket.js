@@ -1,6 +1,7 @@
 import express from 'express';
 import socketio from 'socket.io';
 import config from '../config/config';
+import logs from '../config/log';
 
 const io = socketio(config.socketPort);
 
@@ -26,19 +27,22 @@ export default class Log {
 
       let number = 1;
 
-      let timer = setInterval(() => {
-        socket.emit('message', {
-          id: '22',
-          body: number,
-          screen: '1920x1080',
-          bowser: 'Chrome',
-          platform: 'Mac',
-          version: '50',
-          date: '15:22:15'
-        });
+      logs.getRoomId(id, (err, data) => {
+        // if(err) {
+        //   return;
+        // }
 
-        number++;
-      }, 1500)
+        // socket.emit('message', data);
+
+        console.log(err);
+        console.log(data);
+      });
+
+      // let timer = setInterval(() => {
+        
+
+      //   number++;
+      // }, 1500)
 
       
     })

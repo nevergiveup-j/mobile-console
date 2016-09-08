@@ -1,5 +1,6 @@
 import express from 'express';
 import bowser from '../models/bowser';
+import logs from '../config/log';
 
 export default class Log {
   constructor(req, res) {
@@ -18,9 +19,17 @@ export default class Log {
       useragent: req.headers['user-agent'],
       version: useragent.version,
       platform: useragent.platform,
-      bowser: useragent.name
+      bowser: useragent.name,
+      type: 'log',
+      date: (+new Date())
     });
 
-    console.log(param);
+    logs.create(param, (err, data) => {
+      if(err){
+        return;
+      }
+
+      console.log(data);
+    });
   }
 }

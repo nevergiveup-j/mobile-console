@@ -16,14 +16,16 @@
 </div>
 
 <script id="log-list-tpl" type="text/template">
-  <li>
-    <span class="gray">
-      <span class="date">[<@=date@>]</span>
-      <span class="browser"><@=bowser@> <@=version@> (<@=platform@>)</span>
-    </span>
-    <span class="level">[LOG]</span>
-    <span class="args"><@=body@></span>
-  </li>
+  <@ _.each(datas, function(item) { @>
+    <li>
+      <span class="gray">
+        <span class="date">[<@=item.date@>]</span>
+        <span class="browser"><@=item.bowser@> <@=item.version@> (<@=item.platform@>)</span>
+      </span>
+      <span class="level">[<@=item.type@>]</span>
+      <span class="args"><@=item.body@></span>
+    </li>
+  <@ }) @>
 </script>
 
 <% include ./components/footer %>
